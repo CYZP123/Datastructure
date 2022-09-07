@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/queue.dir/Queue_test.cc.o  -o queue 

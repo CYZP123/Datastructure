@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cyzp/DataStructure/List/List.h
+cstddef
+-
+cassert
+-
+string
+-
+iostream
+-
+
+/home/cyzp/DataStructure/List/List_test.cc
+iostream
+-
+List.h
+/home/cyzp/DataStructure/List/List.h
+

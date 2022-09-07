@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cyzp/DataStructure/Vector/Vector.h
+bits/move.h
+-
+random
+-
+iostream
+-
+
+/home/cyzp/DataStructure/Vector/Vector_test.cc
+iostream
+-
+Vector.h
+/home/cyzp/DataStructure/Vector/Vector.h
+

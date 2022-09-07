@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/binTree.dir/BinTree_test.cc.o  -o binTree 
