@@ -103,7 +103,7 @@ class List {
     CopyNode(list.First(), list.size_);
   }
 
-  List(List<T> const &list, size_t pos, size_t n) {
+  List(List<value_type> const &list, size_t pos, size_t n) {
     CopyNode(list[pos], n);
   }
 
@@ -282,12 +282,12 @@ class List {
   ///!                 pre   pre   pre
   ///!
   ///!                  succ  succ  succ
-  ///! null <-- trailer <-- 0 <-- 1 <-- header --> null ----------------------- After
+  ///! null <-- trailer <-- 0 <-- 1 <-- header --> null  ----------------------- After
   ///!      succ        -->   -->   -->        pre
   ///!                  pre   pre   pre
   ///!
-  ///! ------------------------------------------------------------------------------
-  ///! ------------------------------------------------------------------------------
+  ///! OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+  ///! OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
   ///!
   ///! Loop 1 start:
   ///!
@@ -315,7 +315,7 @@ class List {
   ///!
   ///! 
   ///!                  first   second
-  ///!        succ   succ |       | 
+  ///!        succ   succ |       |      succ
   ///! header ---> 0 ---> 1 ---> trailer ---> null      ----------------------  (4)
   ///!        --->   --->   ---> 
   ///!        pre    pre    pre
@@ -323,17 +323,17 @@ class List {
   ///!                      pre
   ///!
   ///!                           first       second
-  ///!        succ   succ   succ   |           |
+  ///!        succ   succ   succ   |     succ  |
   ///! header ---> 0 ---> 1 ---> trailer ---> null      ---------------------- Loop 1 end
-  ///!        <---   <---   <---
-  ///!        pre    pre    pre
+  ///!        --->   --->   --->         --->
+  ///!        pre    pre    pre          pre
   ///! ------------------------------------------------------------------------------------
   ///! Loop 2 start:
   ///! 
-  ///! first 
-  ///!   |    succ          succ         succ
+  ///! first     second
+  ///!   |    succ |        succ         succ
   ///! header ---> 0 ---> 1 ---> trailer ---> null     -------------------------- (1)
-  ///!        <---   pre    <---         --->
+  ///!        <---   pre    --->         --->
   ///!        succ          pre          pre
   ///!        --->
   ///!        pre
@@ -341,7 +341,7 @@ class List {
   ///!           first  second
   ///!        succ | succ |              succ
   ///! header ---> 0 <--- 1 ---> trailer ---> null     --------------------------  (2)
-  ///!        <---   --->   pre          <---
+  ///!        <---   --->   pre          --->
   ///!        succ   pre                 pre
   ///!        --->
   ///!        pre
